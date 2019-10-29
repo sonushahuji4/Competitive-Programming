@@ -1,3 +1,22 @@
+# If we can break a single big problem into smaller sub-problems,
+# solve the smaller sub-problems and combine their solutions to find the solution for the original big problem,
+# it becomes easier to solve the whole problem.
+
+# Explanation:
+# A divide-and-conquer algorithm works by recursively breaking down a large problem into two or more sub-problems of the same or related type,
+# until these become small enough to be solved directly.
+# The solutions to the sub-problems are then combined to give a solution to the original problem.
+
+# If the array contains one element, then it is already sorted
+# Otherwise, divide the unsorted array into two sub-array of about half the size.
+# Use merge sort algo recursively to sort each sub-array
+# Merge the two sub-array to form a single sorted array
+
+# Worst Case Time Complexity [ Big-O ]: O(n*log n)
+# Best Case Time Complexity [Big-omega]: O(n*log n)
+# Average Time Complexity [Big-theta]: O(n*log n)
+# Space Complexity: O(n)
+
 def merge(left_sub_arr,right_sub_arr):
     sorted_arr = []
     left_index = right_index = 0
