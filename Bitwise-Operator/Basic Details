@@ -1,0 +1,96 @@
+Python Bitwise Operators
+1) And         => &     : "Returns 1 if both the bits are 1 else 0"     eg: 1010 & 0100 = 0000
+2) OR          => |     : "Returns 1 if either of the bit is 1 else0"   eg: 1010 | 0100 = 1110
+3) NOT         => ~     : "Returns one’s compliement of the number"     eg: ~1010 => -(1010 + 1) = -(1011)
+4) XOR         => ^     : "Returns 1 if one of the bit is 1 and other is 0 else returns false" eg: 1010 ^ 0100 = 1110
+
+Shift Operators:
+These operators are used to shift the bits of a number left or right thereby multiplying or dividing the number by two respectively.
+They can be used when we have to multiply or divide a number by two.
+
+5) RIGHT SHIFT => >>
+    Shifts the bits of the number to the right and fills 0 on voids left as a result.
+    Similar effect as of dividing the number with some power of two.
+
+    Example 1:
+    a = 10
+    a >> 1 = 5
+
+    Example 2:
+    a = -10
+    a >> 1 = -5
+
+6) LEFT SHIFT  => <<
+    Shifts the bits of the number to the left and fills 0 on voids left as a result.
+    Similar effect as of multiplying the number with some power of two.
+
+    Example 1: (shifts one bit)
+    5 << 1 = 10
+    means : 5 * 2^1 = 10 ( i.e 2 raise to 1)
+    Example 2: (shifts two bits)
+    5 << 2 = 20
+    means : 5 * 2^2 = 20 ( i.e 2 raise to 2 : 2^2 = 4 and 5*4 = 20)
+
+////////////////////////////////////////////////////////
+
+Applications of Bitwise operator in competative programming:
+
+1) For a given array of repeated elements, exactly one element is not repeated.
+   You need to return the non-repeated element.
+   [1,1,2,2,3,3,4]
+
+Solution: property of XOR:
+          n ^ n = 0
+          n ^ 0 = n
+          so  1^1 = 0
+              2^2 = 0
+              3^3 = 0
+          and 4^0 = 4
+
+2) Find if a number is odd or even.
+Solution: we can use % operator to find out number is odd or even but it takes O(n^3) and for very big number it can give TLE
+          so, eg: 5 => convert it into binary 0101
+                  check the last bit from right: it's 1.
+                  so by using & operator we can find out the number is odd or even
+                  eg:  0101 & 1
+
+                  i.e.   0101
+                       &    1
+                       -------
+                            1 <= if it returns 1 then it's odd else even
+
+                  eg: 4 => binary 0100
+                         0100
+                        &   1
+                        ------
+                            0 <= returns 0, it means number is even
+                  Time complexcity : O(n)
+
+3) Find out minimum number of bit(s) that is needed to convert number a to b.
+Solution : consider a = 11 => binary representation: 1011
+                    b = 15 => binary representation: 1111
+                    so we can do xor
+                    eg:     1011
+                        xor 1111
+                        ---------
+                            0100
+                        ---------
+                    so, minimum number of bit(s) needed is 1
+
+                    counting the set bits i.e 1
+                    a = 11
+                    b = 15
+                    n = a^b
+                    count_= 0
+                    while n > 0:
+                        count_ += (n&1)
+                        n = n>>1  # shift 1 bit right
+                    print(count_)
+
+4) Swape two numbers without using third variable.
+ Solution: we can use xor
+           property of xor:     n^n = 0  and n^0 = n
+           so, consider a = 5 and b = 7
+                        a = a^b
+                        b = b^a # 7^7^5 it will cancel out 7^7 by using n^n = 0
+                        a = a^b % 5^5^7 it will cancel out 5^5 by using n^n = 0
