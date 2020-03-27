@@ -17,8 +17,8 @@ def BFS(source):
 				queue.append(i) # put it in queue
 				visited[i] = 1 # and mark it visited
 
-n = int(input()) # number of nodes
-visited = [0]*(n+1)
+nodes = int(input()) # number of nodes
+visited = [0]*(nodes+1)
 edge = int(input()) # number of edges that connects the nodes
 
 for _ in range(edge):
@@ -26,6 +26,6 @@ for _ in range(edge):
 	addEdge(graph,u,v) # would connect source and destination
 	addEdge(graph,v,u) # would connect destination and source
 
-source = int(input()) # starting traversal from
+source = int(input()) # starting node
 print(BFS(source))
 print(graph) # check the connections
