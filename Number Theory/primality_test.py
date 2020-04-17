@@ -1,3 +1,5 @@
+# Video Reference : https://www.youtube.com/watch?v=ga9N_ey4La4&list=PL2q4fbVm1Ik4liHX78IRslXzUr8z5QxsG&index=2
+
 # Primality test is to determine whether the input interger is a prime or not
 
 #    --------------------| Naive Approach |-------------------
