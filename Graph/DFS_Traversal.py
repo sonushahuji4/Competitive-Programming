@@ -2,12 +2,15 @@ from collections import defaultdict
 graph = defaultdict(list)
 visited = []
 stack = []
-
+path = defaultdict(list)
+path = {1:[[0],[0],[0],[0],[0]]}
 def addEdge(graph,u,v):
 	graph[u].append(v)
 
 def DFS(source):
+	k = 0
 	stack.insert(0,source) # initially put source node in stack
+	path[source][k] = [source,source]
 	visited[source] = 1 # initially mark it visited
 	while stack: # while stack is not empty
 		s = stack.pop() # remove last element from the stack
@@ -15,6 +18,7 @@ def DFS(source):
 		for i in graph[s]:
 			if visited[i] == 0: # if it is not visited then
 				visited[i] = 1  # mark it visited
+				#path[source][k] = [i]
 				stack.insert(0,i) # and put it in stack
 nodes = int(input()) # number of nodes
 visited = [0]*(nodes+1)
@@ -27,3 +31,4 @@ for _ in range(edges):
 
 source = int(input()) # starting node
 print(DFS(source))
+print(path)

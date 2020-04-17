@@ -1,19 +1,26 @@
-n,x,y = map(int,input().split())
-A = list(map(int,input().split()))
-B = list(map(int,input().split()))
-li = []
-for i in range(n):
-	if A[i] >= B[i]:
-		li.append([abs(A[i]-B[i]),1,i])
-	else:
-		li.append([abs(A[i] - B[i]), 0, i])
-li.sort(reverse=True)
-x_ = y_ = ans = 0
-for data in li:
-	if (x_+1 <= x) and data[1] == 1:
-		x_ += 1
-		ans += A[data[2]]
-	elif (y_+1 <= y):
-		y_ += 1
-		ans += B[data[2]]
-print(ans)
+import math
+from collections import defaultdict
+from collections import Counter
+
+modulo = 1000000007
+
+def bfs(graph, source, dest):
+    queue = [[source]]
+    visited = set()
+    while queue:
+        path = queue.pop(0)
+        vertex = path[-1]
+        if vertex == dest:
+            return path
+        elif vertex not in visited:
+            for adj in graph.get(vertex, []):
+                new_path = list(path)
+                new_path.append(adj)
+                queue.append(new_path)
+            visited.add(vertex)
+
+graph = defaultdict(list)
+graph[1].append(2)
+graph[1].append(3)
+graph[2].append(4)
+graph[2].append(5)
