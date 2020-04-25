@@ -5,7 +5,7 @@
 
 from collections import Counter
 
-primeFactors = [0 for _ in range(10001)]
+primeFactors = [0 for _ in range(50000)]
 
 
 def primeFactorizationUsingSieve(n):
@@ -17,7 +17,7 @@ def primeFactorizationUsingSieve(n):
 	return primeFactors
 
 
-primeFactorizationUsingSieve(10001)
+primeFactorizationUsingSieve(50000)
 
 for _ in range(int(input())):
 	num = int(input())
