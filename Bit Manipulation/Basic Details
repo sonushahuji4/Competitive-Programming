@@ -8,19 +8,9 @@ Shift Operators:
 These operators are used to shift the bits of a number left or right thereby multiplying or dividing the number by two respectively.
 They can be used when we have to multiply or divide a number by two.
 
-5) RIGHT SHIFT => >>
-    Shifts the bits of the number to the right and fills 0 on voids left as a result.
-    Similar effect as of dividing the number with some power of two.
+# Reference Video Tutorial Link : https://www.youtube.com/watch?v=Z8iOP_BPOHw&list=PL2q4fbVm1Ik7ip1VkWwe5U_CEb93vw6Iu&index=2
 
-    Example 1:
-    a = 10
-    a >> 1 = 5
-
-    Example 2:
-    a = -10
-    a >> 1 = -5
-
-6) LEFT SHIFT  => <<
+5) LEFT SHIFT  => <<
     Shifts the bits of the number to the left and fills 0 on voids left as a result.
     Similar effect as of multiplying the number with some power of two.
 
@@ -30,6 +20,19 @@ They can be used when we have to multiply or divide a number by two.
     Example 2: (shifts two bits)
     5 << 2 = 20
     means : 5 * 2^2 = 20 ( i.e 2 raise to 2 : 2^2 = 4 and 5*4 = 20)
+
+6) RIGHT SHIFT => >>
+    Shifts the bits of the number to the right and fills 0 on voids left as a result.
+    Similar effect as of dividing the number with some power of two.
+
+    Example 1:
+    a = 10
+    a >> 1 = 5
+    means : 10//(2^1) = 5   (i.e 10 divide by 2 gives you 5)
+
+    Example 2:
+    a = -10
+    a >> 1 = -5
 
 ////////////////////////////////////////////////////////
 
