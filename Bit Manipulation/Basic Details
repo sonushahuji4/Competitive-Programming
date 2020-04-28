@@ -34,6 +34,35 @@ They can be used when we have to multiply or divide a number by two.
     a = -10
     a >> 1 = -5
 
+
+7) XOR AND IT'S PROPERTY (^)
+    Property : 1) Identity Element  = 0
+
+                 1) 0 ^ A = A
+                    Example : A = 23
+
+                    1 0 1 1 1
+                    0 0 0 0 0
+                    ---------
+                    1 0 1 1 1
+                    ---------
+
+                 1) A ^ A = A
+                    Example : A = 23
+
+                    1 0 1 1 1
+                    1 0 1 1 1
+                    ---------
+                    0 0 0 0 0
+                    ---------
+
+               2) Ordering of XOR doesn't matter
+
+                  Example : 2 ^ 3 ^ 4 = (2 ^ 3) ^ 4
+                                      =  2 ^ (3 ^ 4)
+                                      =  (2 ^ 4) ^ 3
+                   All of the above gives the same result, order doesn't matter here.
+
 ////////////////////////////////////////////////////////
 
 Applications of Bitwise operator in competative programming:
