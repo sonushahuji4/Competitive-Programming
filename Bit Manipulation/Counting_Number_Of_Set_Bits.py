@@ -17,7 +17,7 @@
 # 				0 1 0 0 1 1 1 0
 # 				0 0 0 0 0 0 0 1
 # 			-----------------------
-# 				0 0 0 0 0 0 0 0     here : 0 & 1 = 0, so we do not increament count
+# 				0 0 0 0 0 0 0 0     here : 0 & 1 = 0, so we do not increment count
 # 			-----------------------
 #
 # 			: (Right shift operation) N >> 1
