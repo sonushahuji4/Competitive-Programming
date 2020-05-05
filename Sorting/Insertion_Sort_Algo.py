@@ -1,3 +1,4 @@
+# Video Reference : https://www.youtube.com/watch?v=yCxV0kBpA6M
 # Explanation
 # The array of values to be sorted is divided into two sets
 # 1) one that stores sorted values and
@@ -17,13 +18,13 @@
 # Average Time Complexity [Big-theta]: O(n2)
 # Space Complexity: O(1)
 
-arr = list(map(int,input().split()))
+arr = list(map(int, input().split()))
 n = len(arr)
-for i in range(1,n):
-    item_to_insert = arr[i] # pick one value from unsorted arr
-    j = i - 1 # keep trak of last index of sorted arr
-    while j >=0 and arr[j] > item_to_insert: # compare item_to_insert with sorted arr
-        arr[j+1] = arr[j] # then insert at it's proper position in sorted arr
-        j = j - 1
-    arr[j+1] = item_to_insert
+for i in range(1, n):
+	item_to_insert = arr[i]  # pick one value from unsorted arr
+	j = i - 1  # keep trak of last index of sorted arr
+	while j >= 0 and arr[j] > item_to_insert:  # compare item_to_insert with sorted arr
+		arr[j + 1] = arr[j]  # then insert at it's proper position in sorted arr
+		j = j - 1
+	arr[j + 1] = item_to_insert
 print(*arr)
